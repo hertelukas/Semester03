@@ -1,6 +1,7 @@
 ---
 title: "Datenbanken"
 permalink: /gdb
+use_math: true
 ---
 
 # Inhalt
