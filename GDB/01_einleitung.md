@@ -1,3 +1,6 @@
+layout: page
+title: "Einleitung"
+permaleink: /gdb/einleitung
 # Einleitung
 
 ## Motivation für DBMS (database management system)
