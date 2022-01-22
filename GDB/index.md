@@ -1,9 +1,8 @@
 ---
 title: "Datenbanken"
 permalink: /gdb
-use_math: true
 ---
-
+{:toc}
 # Inhalt
 - [Einleitung](#einleitung)
 - [Datenbankentwurf](#datenbankentwurf)
