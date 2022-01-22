@@ -105,11 +105,8 @@ Besitzt eine Entity ein Attribut (oder eine minimale Menge an Attributen), welch
 ### Beziehungen
 Eine Beziehung ist eine Teilmenge des kartesischen Produkts von Entititypen $R \subseteq E_1 \times E_2 \times ... \times E_n$, wobei $n$ den Grad der Beziehung beschreibt.
 Ein Element in $R$ nennt man **Instanz** des Beziehungstyps.
-$$
-  nice
-$$
 Die **Funktionalität** einer Beziehung beschreibt wieviele Entities auf eine andere Entity abgebildet werden. Bei einer 1:1 Beziehung wird jedem Entity aus $E_1$ 
-höchstens ein Entity aus \(E_2\) zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
+höchstens ein Entity aus $E_2$ zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
 wenn man aus einer Entity eine andere Entity herleiten kann.
 
 _Anmerkung: Im Buch wird die 1:N Bezihung partielle Funktion genannt, wie ist das möglich?
