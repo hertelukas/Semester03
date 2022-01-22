@@ -1,10 +1,11 @@
 ---
 title: "Datenbanken"
+permalink: /gdb
 ---
 
 # Inhalt
-[Einleitung](#einleitung)
-[Datenbankentwurf](#entwurf)
+- [Einleitung](#einleitung)
+- [Datenbankentwurf](#entwurf)
 <a name="einleitung"/>
 # Einleitung
 
