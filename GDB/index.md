@@ -6,6 +6,7 @@ permalink: /gdb
 # Inhalt
 - [Einleitung](#einleitung)
 - [Datenbankentwurf](#datenbankentwurf)
+
 # Einleitung
 
 ## Motivation für DBMS (database management system)
@@ -99,4 +100,15 @@ Mit dem Entity-Relationship Modell werden **Entities** und die **Beziehungen** z
 Neben den Entities und den Relationships gibt es auch **Attribute**, die sowohl Entites als auch Relationships haben können.
 
 Beziehungen werden als Rauten dargestellt und Entities als Rechtecke. Attribute werden umkreist. Alle drei werden durch Kanten verbunden. 
-Besitzt eine Entity ein Attribut, welches die Entity identifiziert, wird es unterstrichen und **Schlüssel** genannt. 
+Besitzt eine Entity ein Attribut (oder eine minimale Menge an Attributen), welches die Entity identifiziert, wird es unterstrichen und **Schlüssel** genannt.
+
+### Beziehungen
+Eine Beziehung ist eine Teilmenge des kartesischen Produkts von Entititypen $R \subseteq E_1 \times E_2 \times ... \times E_n$, wobei $n$ den Grad der Beziehung beschreibt.
+Ein Element in $R$ nennt man **Instanz** des Beziehungstyps.
+
+Die **Funktionalität** einer Beziehung beschreibt wieviele Entities auf eine andere Entity abgebildet werden. Bei einer 1:1 Beziehung wird jedem Entity aus $E_1$ 
+höchstens ein Entity aus $E_2$ zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
+wenn man aus einer Entity eine andere Entity herleiten kann.
+
+_Anmerkung: Im Buch wird die 1:N Bezihung partielle Funktion genannt, wie ist das möglich?
+Sobald ein Entity auf mehrere Entities abbildet kann es sich doch nicht mehr um eine Funktion handeln?_ 
