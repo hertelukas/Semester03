@@ -5,8 +5,7 @@ permalink: /gdb
 
 # Inhalt
 - [Einleitung](#einleitung)
-- [Datenbankentwurf](#entwurf)
-<a name="einleitung"/>
+- [Datenbankentwurf](#datenbankentwurf)
 # Einleitung
 
 ## Motivation für DBMS (database management system)
@@ -39,7 +38,6 @@ Das hier verwendete Modell nennt sich relationales Modell und beschreibt Relatio
 Andere Darstellungsmöglichkeiten wären XML, Hierarchische Modelle oder Objektorientierte Datenmodelle (...)
 
 
-<a name="entwurf"/>
 # Datenbankentwurf
 Wir werden uns nur mit der konzeptuellen Modellierung befassen.
 ## Anforderungsanalyse
