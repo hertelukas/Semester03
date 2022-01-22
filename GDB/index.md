@@ -107,7 +107,7 @@ Eine Beziehung ist eine Teilmenge des kartesischen Produkts von Entititypen $R \
 Ein Element in $R$ nennt man **Instanz** des Beziehungstyps.
 
 Die **Funktionalität** einer Beziehung beschreibt wieviele Entities auf eine andere Entity abgebildet werden. Bei einer 1:1 Beziehung wird jedem Entity aus $E_1$ 
-höchstens ein Entity aus $E_2$ zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
+höchstens ein Entity aus \(E_2\) zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
 wenn man aus einer Entity eine andere Entity herleiten kann.
 
 _Anmerkung: Im Buch wird die 1:N Bezihung partielle Funktion genannt, wie ist das möglich?
