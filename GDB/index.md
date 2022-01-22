@@ -2,7 +2,6 @@
 title: "Datenbanken"
 permalink: /gdb
 ---
-{:toc}
 # Inhalt
 - [Einleitung](#einleitung)
 - [Datenbankentwurf](#datenbankentwurf)
@@ -109,5 +108,11 @@ Die **Funktionalität** einer Beziehung beschreibt wieviele Entities auf eine an
 höchstens ein Entity aus $E_2$ zugewiesen und umgekehrt. Aus den Funktionalitäten lassen sich partielle Funktionen herleiten,
 wenn man aus einer Entity eine andere Entity herleiten kann.
 
-_Anmerkung: Im Buch wird die 1:N Bezihung partielle Funktion genannt, wie ist das möglich?
+_Anmerkung: Im Buch wird die 1:N Beziehung partielle Funktion genannt, wie ist das möglich?
 Sobald ein Entity auf mehrere Entities abbildet kann es sich doch nicht mehr um eine Funktion handeln?_ 
+
+Die Funktionalitäten können auch auf nicht-binäre Beziehungen übertragen werden. Damit können Integritätsbedingungen definiert werden:
+Partielle Funktionen bilden immer auf ein eindeutiges Entity ab.
+
+Die **(min, max)-Notation** kann Beziehungen ebenfalls beschreiben. 
+Hierbei wird eine obere und untere Schranke festgelegt wie oft eine Entity in einer Beziehung vorkommen darf. 
