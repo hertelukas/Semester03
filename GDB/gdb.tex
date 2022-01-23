@@ -1,0 +1,148 @@
+%LTeX: language=de-DE
+\documentclass[a4paper, oneside]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{layouts}
+
+\title{Datenbanken}
+\author{Lukas Hertel}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan
+}
+
+\begin{document}
+  \maketitle
+  \tableofcontents
+
+  \chapter{Einleitung}
+  \section{Motivation für DBMS}
+  \begin{itemize}
+    \item Redundanz und Inkonsistenz
+    \begin{itemize}
+      \item Daten müssen oft in verschiedenen Kontexten gespeichert sein
+    \end{itemize}
+    \item Zugriffsbeschränkung
+    \begin{itemize}
+      \item Wenn Daten in unterschiedlichen Dateien liegen ist Verknüpfung schwierig
+    \end{itemize}
+    \item Mehrbenutzerbetrieb
+    \item Verlust von Daten
+    \item Integritätsverletzung
+    \begin{itemize}
+      \item Bedingungen die an die Daten gestellt werden
+    \end{itemize}
+    \item Sicherheit
+    \begin{itemize}
+      \item Rechte für unterschiedliche Nutzer
+    \end{itemize} 
+    \item Entwicklungskosten
+    \begin{itemize}
+      \item Dateiverwaltung muss nicht neu implementiert werden
+    \end{itemize}
+  \end{itemize}
+  
+  \section{Datenbankabstraktion}
+  \begin{enumerate}
+    \item Physische Ebene (Daten im Speicher)
+    \item Logische Ebene (Schema)
+    \item Sichten (zugeschnittene Teilmenge der Informationen)
+  \end{enumerate}
+
+  Eine Änderung in der physischen Ebene darf die logische Ebene nicht verändern.
+
+  \section{Datenmodelle}
+  Um die Realität in einer Datenbank zu modellieren, muss man erst selbst ein konzeptuelles Schema entwerfen.
+  Danach kann man dieses Schema halbautomatisch in verschiedene festgelegte logische Datenmodelle übersetzen.
+  Das hier verwendete Modell nennt sich relationales Modell und beschreibt Relationen anhand von Tabellen.
+
+  Andere Darstellungsmöglichkeiten wären XML, Hierarchische Modelle oder objektorientierte Datenmodelle (...)
+
+  \chapter{Datenbankentwurf}
+  Wir werden uns nur mit der konzeptuellen Modellierung befassen.
+
+  \section{Anforderungsanalyse}
+  Rezept zur Erstellung eines Dokuments mit dem Ziel die Anforderungen an das System zu beschreiben.
+  Die gegebenen Muster sollten, falls nötig, angepasst werden.
+
+  \subsection{Objektbeschreibung}
+  Aufbau:
+  \begin{verbatim}
+  <Objektname>
+  - Anzahl: <Anzahl>
+  - Attribute
+    * <Attribut1>
+      - Typ: <Datentyp>
+      - Länge: <Länge der Zeichen oder der Ziffern einer Zahl>
+      - Wertebereich: <Von...Bis>
+      - Anzahl Wiederholungen: <Wie oft ein Objekt ein Attribut hat>
+      - Definiertheit: <Wie viele Einträge bekannt sind in Prozent>
+      - Identifizierend: <Ja/Nein je nach eindeutigkeit des Attributs>
+    * <Attribut2>
+    ...
+  \end{verbatim}
+
+  \subsection{Beziehungsbeschreibung}
+  In einer Datenbank werden auch die Beziehungen zwischen Objekten gespeichert. Diese gilt es ebenfalls formal zu beschreiben.
+
+  Aufbau:
+  \begin{verbatim}
+  <Beziehung>
+  - Beteiligte Objekte
+    * <Objekt1> als <Rolle>
+    * <Objekt2> als <Rolle>
+    ...
+  - Attribute der Beziehung
+    * <Attribut1>
+    * <Attribut2>
+    ...
+  - Anzahl: <Anzahl> (pro <Zeiteinheit>)
+  \end{verbatim}
+
+  \subsection{Prozessbeschreibung}
+  Die Prozessbeschreibung soll die Verarbeitung von Daten beschreiben, also den operativen Teil der Datenbank.
+  Aufbau:  
+  \begin{verbatim}
+  <Prozessname>
+  - Häufigkeit: <Intervall>
+  - benötigte Daten
+    * <Objekt1>
+    * <Objekt2>
+    ...
+  - Priorität: <hoch, niedrig, ...>
+  - zu verareitende Datenmenge
+    * <Anzahl> <Objekt1>
+    ...
+  \end{verbatim}
+  Ein beispielhafter Prozess in einer Universitätsdatenbank ist die halbjährliche Ausstellung von Zeugnissen.
+
+  \section{Konzeptueller Entwurf}
+  \subsection{Entity-Relationship Modell}
+  Mit dem Entity-Relationship Modell werden \textbf{Entites} und die \textbf{Beziehungen} zwischen ihnen modelliert.
+  Neben den Entities und den Relationships gibt es auch \textbf{Attribute}, die sowohl Entites als auch Relationships haben können.
+
+  Beziehungen werden als Rauten dargestellt und Entities als Rechtecke. Attribute werden umkreist. Alle drei werden durch Kanten verbunden.
+  Besitzt eine Entity ein Attribut (oder eine minimale Menge an Attributen), welches die Entity identifiziert,
+  wird es unterstrichen und \textbf{Schlüssel} genannt.
+
+  \subsection{Beziehungen}
+  Eine Beziehung ist eine Teilmenge des kartesischen Produkts von Entititypen $R \subseteq E_1 \times E_2 \times ... \times E_n$, wobei $n$ den Grad der Beziehung beschreibt.
+  Ein Element in $R$ nennt man \textbf{Instanz} des Beziehungstyps.
+  Die \textbf{Funktionalität} einer Beziehung beschreibt wie viele Entities auf eine andere Entity abgebildet werden.
+  Bei einer 1:1 Beziehung wird jedem Entity aus $E_1$ höchstens ein Entity aus $E_2$ zugewiesen und umgekehrt.
+  Aus den Funktionalitäten lassen sich partielle Funktionen herleiten, wenn man aus einer Entity eine andere Entity herleiten kann.
+
+  \textit{Anmerkung: Im Buch wird die 1:N Beziehung partielle Funktion genannt, wie ist das möglich?
+  Sobald ein Entity auf mehrere Entities abbildet kann es sich doch nicht mehr um eine Funktion handeln?}
+
+  Die Funktionalitäten können auch auf nicht-binäre Beziehungen übertragen werden. Damit können Integritätsbedingungen definiert werden:
+  Partielle Funktionen bilden immer auf ein eindeutiges Entity ab.
+
+  Die \textbf{(min, max)-Notation} kann Beziehungen ebenfalls beschreiben.
+  Hierbei wird eine obere und untere Schranke festgelegt wie oft eine Entity in einer Beziehung vorkommen darf.
+\end{document}
