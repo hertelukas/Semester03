@@ -145,4 +145,18 @@
 
   Die \textbf{(min, max)-Notation} kann Beziehungen ebenfalls beschreiben.
   Hierbei wird eine obere und untere Schranke festgelegt wie oft eine Entity in einer Beziehung vorkommen darf.
+  
+  \section{Existenzabhängige Entitytypen}
+  Kann eine Entity nicht ohne ein anderes Entity existieren, wird es als schwache Entity bezeichnet.
+  Oft ist eine Schlüsselkombination mit einer anderen Entity notwendig. Dabei wird der Teil des Schlüssels, welcher zum schwachen Entity gehört, 
+  gestrichelt unterstrichen. Repräsentiert werden sie durch doppelt umrandete Rechtecke.
+
+  \section{Generalisierung und Aggregation}
+  Mit einer is-a Beziehung kann man Typen generalisieren. Wenn eine Generalisierung disjunkt ist, sind alle Untertypen disjunkt voneinander. 
+  Sollte der Obertyp keine Objekte enthalten, wird die Generalisierung vollständig genannt.
+
+  Unter der Aggregation versteht man das Aufteilen eines Typs in Unterteile, aus denen der Typ besteht. Man nennt die Beziehung "Teil-von" 
+  und ist im Grunde eine normale Beziehung.
+
+
 \end{document}
